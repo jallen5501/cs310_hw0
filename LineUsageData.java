@@ -1,31 +1,23 @@
 public class LineUsageData {
 
-	private SinglyLinkedList<Usage> list;
+	private SinglyLinkedList<Usage> list = new SinglyLinkedList<Usage>();
 
 	public LineUsageData() {
-		list = new SinglyLinkedList<Usage>();
 	}
 
 	public void addObservation(String username) {
-		if (this.list.size() == 0)
-			this.list.add(new Usage(username, 1));
-		else {
-			boolean present = false;
-			int index;
-			for (index = 0; index < this.list.size(); index++) {
-				if (username.equals(this.list.get(index).getUser())) 
-					present = true;
-				if (present)
-					break;
+
+		for(int i=0; i< this.list.size() ;i++) {
+			if (username.equals(this.list.get(i).getUser())) {
+				this.list.get(i).incrementCount();
+				return;
 			}
-			if (present)
-				this.list.get(index).addCount();
-			else
-				this.list.add(new Usage(username, 1));
 		}
+		this.list.add(new Usage(username, 1)); 
 	}
 
 	public Usage findMaxUsage() {
+
 		Usage result = new Usage(null, 0);
 		for (int i = 0; i < this.list.size(); i++) {
 			if (list.get(i).getCount() > result.getCount())
@@ -37,5 +29,4 @@ public class LineUsageData {
 	public int size() {
                 return this.list.size();
         }
-
 }
