@@ -1,16 +1,27 @@
 public class Usage {
 
 	private String user;
-	private int count;
+        private int count;
 
-	public Usage(String user, int count) {
-		this.user = user;
-		this.count = count;
+        public Usage(String user, int count) {
+                this.user = user;
+                this.count = count;
+        }
+
+        public String toString() {
+                return this.user + ", " + this.count;
+        }
+
+	public int getCount() {
+		return this.count;
 	}
 
-	public String toString() {
-		user + ", " + count + "\n";
+	public void addCount() {
+		this.count++;
+	} 
+
+	public String getUser() {
+		return this.user;
 	}
+
 }
-
-
