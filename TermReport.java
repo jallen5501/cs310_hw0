@@ -1,28 +1,30 @@
 import java.io.*;
 
-public static void main(String[] args) {
+public class TermReport {
 
-	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-	private LineUsageData[500] linelist;
-	String line;
- 
-	while (line = in.readLine != null) {
-		String[] x = line.split(" ");	
-		int index = 0;
-		boolean present = false;
-		while (list[x[0]].get(i) != null) {
-			if (linelist[x[0]].get(i) == x[1])
-				present = true;
-			if (present == true) {
-                        	linelist[x[0]].list.get(i).count++;
-				continue;
-			}
-			list[x[0]].addObesrvation(new Usage(x[1],0));
+ 	public static void main(String[] args) throws IOException {
+
+		LineUsageData[] linelist = new LineUsageData[500];
+
+		for (int i = 0; i < 500; i++)
+			linelist[i] = new LineUsageData();
+
+        	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		for (String line; (line = in.readLine()) != null; ) {
+			String[] x = line.split(" ");
+			linelist[Integer.parseInt(x[0])].addObservation(x[1]);
+		}
+		System.out.println("Line, Most Common User, Count");
+		
+		for (int i = 0; i < 500; i++) {
+			if (linelist[i].size() == 0)
+				System.out.println((i + 1) + ", -NONE-, 0");
+			else
+				System.out.println((i + 1) + ", " + linelist[i].findMaxUsage());	
 		}
 	}
-	
-	for (int i = 0; i < 500; i++) 
-		System.out.format("%d, %s"i, list[i].findMaxUsage());
 
-		
 }
+
+
+
