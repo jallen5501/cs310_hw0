@@ -19,10 +19,8 @@ public class LineUsageData {
 	public Usage findMaxUsage() {
 
 		Usage result = new Usage(null, 0);
-		for (int i = 0; i < this.list.size(); i++) {
-			if (list.get(i).getCount() > result.getCount())
-				result = list.get(i);		
-		}
+		for (int i = 0; i < this.list.size(); i++) 
+			result = list.get(i).getCount() > result.getCount() ? list.get(i)  : result; 
 		return result;
 	}
 

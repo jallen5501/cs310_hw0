@@ -8,20 +8,19 @@ public class Usage {
                 this.count = count;
         }
 
-        public String toString() {
-                return this.user + ", " + this.count;
-        }
-
 	public int getCount() {
 		return this.count;
 	}
 
-	public void addCount() {
+	public void incrementCount() {
 		this.count++;
-	} 
-
+	}
+ 
 	public String getUser() {
 		return this.user;
 	}
 
+	public String toString() {
+                return this.user + ", " + this.count;
+        }
 }
