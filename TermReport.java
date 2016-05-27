@@ -1,8 +1,6 @@
 import java.io.*;
 public class TermReport {
-
  	public static void main(String[] args) throws IOException {
-
 		LineUsageData[] linelist = new LineUsageData[500];
 		for (int i = 0; i < 500; i++)
 			linelist[i] = new LineUsageData();
@@ -18,7 +16,7 @@ public class TermReport {
 			if (linelist[i].size() != 0)
 				System.out.println((i + 1) + ", " + linelist[i].findMaxUsage());
 			else
-				System.out.println((i + 1) + ", -NONE-, 0");
+				System.out.println((i + 1) + new Usage("-NONE-" , 0).toString());
 		}
 	}
 }
