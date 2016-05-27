@@ -1,6 +1,6 @@
 public class Usage {
 
-	private String user;
+	private final String user;
         private int count;
 
         public Usage(String user, int count) {
@@ -8,19 +8,19 @@ public class Usage {
                 this.count = count;
         }
 
-	public int getCount() {
-		return this.count;
+	public int getCount() { 
+		return this.count; 
+	}
+	
+	public void incrementCount() { 
+		this.count++; 
 	}
 
-	public void incrementCount() {
-		this.count++;
-	}
- 
-	public String getUser() {
-		return this.user;
+	public String getUser() { 
+		return this.user; 
 	}
 
-	public String toString() {
-                return this.user + ", " + this.count;
-        }
+	public String toString() { 
+		return this.user + ", " + this.count; 
+	}
 }
