@@ -7,8 +7,6 @@ public class TermReport {
 
         	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		for (String line; (line = in.readLine()) != null; ) {
-			if (line.length() == 0)
-				break;
 			String[] x = line.split(" ");
 			linelist[Integer.parseInt(x[0])].addObservation(x[1]);
 		}
