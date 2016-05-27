@@ -7,7 +7,7 @@ public class LineUsageData {
 
 	public void addObservation(String username) {
 		for(int i=0; i< this.list.size() ;i++) {
-			if (this.username.equals(this.list.get(i).getUser())) {
+			if (username.equals(this.list.get(i).getUser())) {
 				this.list.get(i).incrementCount();
 				return;
 			}
