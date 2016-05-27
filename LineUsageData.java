@@ -25,3 +25,4 @@ public class LineUsageData {
 	public int size() { 
 		return this.list.size(); 
 	}
+}

@@ -14,7 +14,7 @@ public class TermReport {
 		System.out.println("Line, Most Common User, Count");
 		for (int i = 0; i < 500; i++) {
 			if (linelist[i].size() != 0)
-				System.out.println((i + 1) + ", " + linelist[i].findMaxUsage());
+				System.out.println((i + 1) + linelist[i].findMaxUsage().toString());
 			else
 				System.out.println((i + 1) + new Usage("-NONE-" , 0).toString());
 		}

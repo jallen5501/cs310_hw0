@@ -21,6 +21,6 @@ public class Usage {
 	}
 
 	public String toString() { 
-		return this.user + ", " + this.count; 
+		return ", " + this.user + ", " + this.count; 
 	}
 }
